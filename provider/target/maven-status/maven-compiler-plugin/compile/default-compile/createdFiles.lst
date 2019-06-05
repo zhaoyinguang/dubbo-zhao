@@ -1,0 +1,3 @@
+provider\dubbo\service\impl\UserServiceImpl.class
+provider\mq\MqProducer.class
+provider\mq\MqProducer$1.class

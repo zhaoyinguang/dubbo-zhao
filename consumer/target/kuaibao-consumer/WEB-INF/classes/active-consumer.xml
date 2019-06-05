@@ -14,7 +14,7 @@
     <context:component-scan base-package="active"/>
     <!-- ActiveMQ 连接工厂 -->
     <!-- 真正可以产生Connection的ConnectionFactory，由对应的 JMS服务厂商提供-->
-    <!-- 如果连接网络：tcp://ip:61616；未连接网络：tcp://localhost:61616 以及用户名，密码-->
+    <!-- 连接网络：tcp://ip:61616；以及用户名，密码-->
     <amq:connectionFactory id="amqConnectionFactory"
                            brokerURL="tcp://localhost:61616" userName="admin" password="admin"  />
 
@@ -37,8 +37,9 @@
         <property name="pubSubDomain" value="false" />
     </bean>
 
-    <jms:listener-container destination-type="queue" container-type="default" connection-factory="connectionFactory" acknowledge="auto">
-        <jms:listener destination="test1" ref="myConsumer"/>
+    <!--定义listener-->
+    <jms:listener-container destination-type="queue" container-type="default" connection-factory="connectionFactory" acknowledge="auto" prefetch="10">
+        <jms:listener destination="test1" ref="myConsumer" />
         <jms:listener destination="test2" ref="myConsumertest"/>
     </jms:listener-container>
 

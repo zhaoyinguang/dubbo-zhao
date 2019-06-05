@@ -1,3 +1,9 @@
-active\MyConsumertest.class
+active\EchoClient.class
+active\EchoClient$1.class
+active\EchoServerHandler.class
 active\MyConsumer.class
 dubbo\consumer\controller\UserController.class
+active\MyConsumertest.class
+active\EchoClientHandler.class
+active\EchoServer.class
+active\EchoServer$1.class
